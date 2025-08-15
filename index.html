@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Merchandise — Toko Merchandise Kekinian</title>
+  <meta name="description" content="The Merchandise: toko merchandise kekinian. Kaos, mug, gantungan kunci, topi, totebag.">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="nav container">
+      <div class="brand">
+        <img src="assets/img/logo.svg" alt="the merchandise">
+        <div class="title">the merchandise</div>
+        <span class="badge">Hitam · Putih · Biru</span>
+      </div>
+      <div class="search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><line x1="16.65" y1="16.65" x2="22" y2="22" stroke="currentColor" stroke-width="2"/></svg>
+        <input placeholder="Cari produk lucu..." />
+      </div>
+      <button id="openCart" class="icon-btn" aria-label="Buka keranjang">
+        <span>🛒</span>
+        <span class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Merchandise <span style="color:var(--blue)">keren</span> untuk setiap momen</h1>
+        <p>Desain eksklusif, kualitas maksimal. Temukan kaos, mug, gantungan kunci, topi dan totebag favoritmu di sini.</p>
+        <div class="cta">
+          <button class="btn" id="checkoutBtn">Checkout</button>
+          <a class="btn ghost" href="#best">Lihat Produk Terlaris</a>
+        </div>
+        <div class="address" style="margin-top:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s7-6.3 7-12a7 7 0 10-14 0c0 5.7 7 12 7 12z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+          <div><strong>Alamat Toko:</strong> Jl. Diponegoro 73, Yogyakarta</div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/dove.svg" alt="Burung merpati (ikon)">
+      </div>
+    </section>
+
+    <section id="best" class="section">
+      <h2>Produk Terlaris</h2>
+      <p class="sub">Maksimal 5 produk favorit pelanggan kami.</p>
+      <div class="slider">
+        <div class="slides"></div>
+        <div class="nav">
+          <button id="prev" class="icon-btn" aria-label="Sebelumnya">◀</button>
+          <button id="next" class="icon-btn" aria-label="Selanjutnya">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Katalog</h2>
+      <p class="sub">Semua produk hadir dengan kualitas terbaik.</p>
+      <div id="catalog" class="grid"></div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <h2>Testimoni Pelanggan</h2>
+      <p class="sub">Apa kata mereka tentang the merchandise?</p>
+      <div id="testiList" class="testimonials"></div>
+      <div class="card" style="margin-top:14px">
+        <h3>Tulis Testimoni Kamu</h3>
+        <form id="testiForm" class="row">
+          <input type="text" name="name" placeholder="Nama (opsional)">
+          <input type="number" name="stars" min="1" max="5" placeholder="Bintang (1-5)" value="5">
+          <textarea name="text" rows="3" placeholder="Tulis pengalamanmu..."></textarea>
+          <button class="btn" type="submit">Kirim Testimoni</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="feedback" class="section">
+      <h2>Kritik & Saran</h2>
+      <p class="sub">Bantu kami jadi lebih baik dengan masukannya ya.</p>
+      <div class="card">
+        <form id="feedbackForm" class="row">
+          <input type="text" name="name" placeholder="Nama (opsional)">
+          <textarea name="message" rows="4" placeholder="Tulis kritik/saran kamu..."></textarea>
+          <button class="btn" type="submit">Kirim</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © <span id="year"></span> the merchandise · Dibuat dengan HTML, CSS, dan JavaScript
+  </footer>
+
+  <div id="cartModal" class="modal" aria-hidden="true">
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <h3>Keranjang Belanja</h3>
+        <button id="closeCart" class="icon-btn" aria-label="Tutup">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="total">
+        <span>Total</span>
+        <span id="cartTotal">Rp0</span>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:10px">
+        <button class="btn ghost" onclick="localStorage.removeItem('tm_cart_v1'); location.reload()">Kosongkan</button>
+        <button class="btn" id="checkoutBtn">Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

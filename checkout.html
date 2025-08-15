@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — The Merchandise</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="nav container">
+      <div class="brand">
+        <img src="assets/img/logo.svg" alt="the merchandise">
+        <div class="title">Checkout</div>
+      </div>
+      <a class="icon-btn" href="index.html">← Kembali</a>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="card" style="margin-bottom:14px">
+      <h2>Ringkasan Pesanan</h2>
+      <div id="orderSummary"></div>
+      <div class="total"><span>Total</span> <span id="orderTotal">Rp0</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Data Pemesan</h2>
+      <form id="payForm" class="row">
+        <input required type="text" placeholder="Nama Lengkap">
+        <input required type="email" placeholder="Email">
+        <input required type="text" placeholder="Alamat Pengiriman">
+        <button class="btn" type="submit">Bayar Sekarang</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">© <script>document.write(new Date().getFullYear())</script> the merchandise</footer>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>
